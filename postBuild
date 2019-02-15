@@ -11,4 +11,4 @@ cd _build
 cmake ..
 make
 make b
-sudo make install
+#sudo make install
