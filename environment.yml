@@ -9,4 +9,4 @@ dependencies:
 - gcc
 - graphviz
 - ncurses
-- Cython
+- cython
