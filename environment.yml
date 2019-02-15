@@ -6,7 +6,7 @@ channels:
 dependencies:
 - notebook
 - cmake
-- gcc
+- clang
 - graphviz
 - ncurses
 - cython
