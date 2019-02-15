@@ -1,0 +1,12 @@
+name: awali
+
+channels:
+- conda-forge
+
+dependencies:
+- notebook
+- cmake
+- g++
+- graphviz
+- ncurses
+- Cython
