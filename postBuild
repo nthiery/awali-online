@@ -4,7 +4,7 @@ FILE=$VERSION.tgz
 URL="http://files.vaucanson-project.org/tarballs/$FILE"
 
 wget $URL
-tar xvf $FILE 
+tar xf $FILE 
 cd $VERSION
 mkdir _build
 cd _build
