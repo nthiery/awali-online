@@ -1,6 +1,14 @@
 #!/bin/sh
-FILE=awali-all-v1.0.0-190215.tgz
-URL=http:files.vaucanson-project.org/tarballs/$FILE
+VERSION=awali-all-v1.0.0-190215
+FILE=$VERSION.tgz
+URL="http://files.vaucanson-project.org/tarballs/$FILE"
 
 wget $URL
 tar xvf $FILE 
+cd $VERSION
+mkdir _build
+cd _build
+cmake ..
+make
+make b
+sudo make install
