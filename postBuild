@@ -1,0 +1,6 @@
+#!/bin/sh
+FILE=awali-all-v1.0.0-190215.tgz
+URL=http:files.vaucanson-project.org/tarballs/$FILE
+
+wget $URL
+tar xvf $FILE 
