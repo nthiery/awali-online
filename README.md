@@ -1,2 +1,2 @@
-# awali-online
-A binder-enabled repository for an online demo of awali
+# Awali online
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nthiery/awali-online/master)
