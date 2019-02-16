@@ -1,2 +1,3 @@
-# Awali online
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nthiery/awali-online/master)
+# Try [awali](http://vaucanson-project.org/Awali/index.html) online
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nthiery/awali-online/master?filepath=Edition1.ipynb)
