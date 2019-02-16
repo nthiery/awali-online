@@ -6,9 +6,10 @@ URL="http://files.vaucanson-project.org/tarballs/$FILE"
 wget $URL
 tar xf $FILE 
 cd $VERSION
+sed -i "s@/usr/local@/srv/conda@g" CMakeLists.txt cora/CMakeLists.txt
 mkdir _build
 cd _build
-cmake ..
+cmake ..   # How to properly set the install dir? The apparently standard -DCMAKE_INSTALL_PREFIX=/srv/conda was ignored
 make
-make b
-#sudo make install
+#make b
+make install
