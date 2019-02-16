@@ -11,5 +11,5 @@ mkdir _build
 cd _build
 cmake ..   # How to properly set the install dir? The apparently standard -DCMAKE_INSTALL_PREFIX=/srv/conda was ignored
 make
-#make b
-make install
+make b
+make install # Tries to  installation bash completion for cora in /etc/, and fail
