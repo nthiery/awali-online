@@ -4,11 +4,16 @@ channels:
 - conda-forge
 
 dependencies:
-- notebook
-- cmake
-- make
-- clangdev
-- graphviz
-- ncurses
+- python
 - cython
+- jupyterlab
 - cxx-compiler
+- cmake
+- graphviz
+
+# Needed for CORA
+- ncurses
+
+# Needed for documentation
+- doxygen
+- nbconvert
