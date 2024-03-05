@@ -1,4 +1,13 @@
 #!/bin/sh
-set -ex
+set -x
 
 conda run -n base bash -c "echo \${CONDA_PREFIX}"
+
+conda run -n notebook bash -c "echo \${CONDA_PREFIX}"
+
+conda activate notebook
+conda deactivate
+conda activate base
+conda deactivate
+
+echo $MAMBA_ROOT_PREFIX
