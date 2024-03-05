@@ -1,15 +1,26 @@
 #!/bin/sh
-VERSION=awali-all-v1.0.0-190215
-FILE=$VERSION.tgz
-URL="http://files.vaucanson-project.org/tarballs/$FILE"
+set -ex
 
-wget $URL
-tar xf $FILE 
+VERSION=awali-all-v2.3.0-230512
+
+echo "Installing $VERSION..."
+
+wget "http://files.vaucanson-project.org/tarballs/$VERSION.tgz"
+tar xzf $VERSION.tgz
+rm $VERSION.tgz
 cd $VERSION
-sed -i "s@/usr/local@/srv/conda@g" CMakeLists.txt cora/CMakeLists.txt
+
+# Replaces lines 503 and 516 of awalipy/bridge-to-dyn/algos to add const to the equiv parameter.
+# Else, cython in version >= 3 complains.
+sed -i 's/\& equiv/const\& equiv/g' awalipy/bridge-to-dyn/algos.hh
+
 mkdir _build
 cd _build
-cmake ..   # How to properly set the install dir? The apparently standard -DCMAKE_INSTALL_PREFIX=/srv/conda was ignored
+
+# If either CORA (the command line interface to awali) or the documentation should not be generated, add to the following command the flags : -DCORA=FALSE or -DDOCUMENTATION=FALSE
+# By default, environment.yml was installed in conda's base environement. We install awali in that environement too.
+cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DFORCE_INSTALL_IN_PREFIX=TRUE ..
+
 make
-make b
-make install || echo failure # Tries to install bash completion for cora in /etc/, and fail
+make install
+# Add rm of the awali folder ?
