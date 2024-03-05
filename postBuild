@@ -18,13 +18,13 @@ mkdir _build
 cd _build
 
 # If either CORA (the command line interface to awali) or the documentation should not be generated, add to the following command the flags : -DCORA=FALSE or -DDOCUMENTATION=FALSE
-# By default, environment.yml was installed in conda's base environement. We install awali in that environement too.notebook
+# By default, environment.yml was installed in conda's base environement. We install awali in that environement too.
 # When Binder launches postBuild, no conda env is active, and it is impossible to run "conda activate" nor "mamba activate". This is why we use the "run" command, which works :D
 # NB : The mamba env where everything is installed is called notebook. Its location is stored in the variable CONDA_DEFAULT_ENV.
 # For more information, look at Binder's Build Logs.
-mamba run -n $CONDA_DEFAULT_ENV bash -c "cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DFORCE_INSTALL_IN_PREFIX=TRUE .."
+mamba run -p $CONDA_DEFAULT_ENV bash -c "cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DFORCE_INSTALL_IN_PREFIX=TRUE .."
 
-mamba run -n $CONDA_DEFAULT_ENV make
+mamba run -p $CONDA_DEFAULT_ENV make
 # Add pre compilation
-mamba run -n $CONDA_DEFAULT_ENV make install
+mamba run -p $CONDA_DEFAULT_ENV make install
 # Add rm of the awali folder ?
