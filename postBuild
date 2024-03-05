@@ -1,4 +1,4 @@
 #!/bin/sh
 set -ex
 
-mamba init
+conda run -n base bash -c "echo \${CONDA_PREFIX}"
