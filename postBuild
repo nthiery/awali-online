@@ -1,7 +1,4 @@
 #!/bin/sh
 set -ex
 
-env
-
-conda env list
-conda activate notebook
+mamba init
