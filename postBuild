@@ -3,5 +3,5 @@ set -ex
 
 env
 
-mamba env list
-mamba activate notebook
+conda env list
+conda activate notebook
