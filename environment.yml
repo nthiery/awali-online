@@ -5,14 +5,14 @@ channels:
 
 dependencies:
 - python=3.10
-- cython
-- jupyterlab
-- cxx-compiler
-- cmake
-- graphviz
+- cython=3.0.8
+- jupyterlab=4.1.3
+- cxx-compiler=1.7.0
+- cmake=3.28.3
+- graphviz=9.0.0
 
 # Needed for CORA
-- ncurses
+- ncurses=6.4
 
 # Needed for documentation
 #- doxygen
