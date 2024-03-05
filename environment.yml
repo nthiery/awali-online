@@ -5,15 +5,3 @@ channels:
 
 dependencies:
 - python=3.10
-- cython
-- jupyterlab
-- cxx-compiler
-- cmake
-- graphviz
-
-# Needed for CORA
-- ncurses
-
-# Needed for documentation
-- doxygen
-- nbconvert
