@@ -28,7 +28,7 @@ mamba run -p $CONDA_DEFAULT_ENV bash -c 'make'
 
 # Precompilation of most used functions.
 echo "This next step may take a long time (5 min). Do not worry."
-mamba run -p $CONDA_DEFAULT_ENV bash -c 'make b'
+mamba run -p $CONDA_DEFAULT_ENV bash -c 'make recommended'
 
 echo "This next step may take a long time (5 min). Do not worry."
 mamba run -p $CONDA_DEFAULT_ENV bash -c 'make install'
