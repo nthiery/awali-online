@@ -15,5 +15,5 @@ dependencies:
 - ncurses
 
 # Needed for documentation
-- doxygen
-- nbconvert
+#- doxygen
+#- nbconvert
