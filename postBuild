@@ -19,8 +19,14 @@ cd _build
 
 # If either CORA (the command line interface to awali) or the documentation should not be generated, add to the following command the flags : -DCORA=FALSE or -DDOCUMENTATION=FALSE
 # By default, environment.yml was installed in conda's base environement. We install awali in that environement too.
+mamba env list
+REMEMBER_CONDA_PREFIX=$CONDA_PREFIX
+mamba deactivate
+mamba activate $REMEMBER_CONDA_PREFIX
+
 cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DFORCE_INSTALL_IN_PREFIX=TRUE ..
 
 make
+# Add pre compilation
 make install
 # Add rm of the awali folder ?
