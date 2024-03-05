@@ -1,13 +1,12 @@
 #!/bin/sh
 set -x
 
-conda run -n base bash -c "echo \${CONDA_PREFIX}"
+mamba run -n base bash -c "echo \${CONDA_PREFIX}"
 
-conda run -n notebook bash -c "echo \${CONDA_PREFIX}"
+mamba run -n notebook bash -c "echo \${CONDA_PREFIX}"
 
-conda activate notebook
-conda deactivate
-conda activate base
-conda deactivate
+mamba run -n notebook bash -c "echo \${CXXFLAGS}"
+
+echo $CONDA_PREFIX
 
 echo $MAMBA_ROOT_PREFIX
