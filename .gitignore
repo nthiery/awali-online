@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Compiled folders and files
+awali-all*
+*.tgz
